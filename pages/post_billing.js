@@ -1,14 +1,15 @@
-function PostSignUp(namagoib, namalastgoib, emailgoib, passwordgoib, nohandphone) {
+function PostSignUp(id, namapengeluaran, jumlah, tanggal, cabang ) {
   var myHeaders = new Headers();
-  myHeaders.append("Login", "HarisGantengbangetDong");
+  myHeaders.append("Login", "GEGE");
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "namagoib": namagoib,
-    "namalastgoib": namalastgoib,
-    "emailgoib": emailgoib,
-    "passwordgoib": passwordgoib,
-    "nohandphone": nohandphone
+    "id":parseInt(id),
+    "namapengeluaran": namapengeluaran,
+    "jumlah":parseInt(jumlah),
+    "tanggal": tanggal,
+    "cabang": cabang
+
   });
 
   var requestOptions = {
@@ -18,25 +19,25 @@ function PostSignUp(namagoib, namalastgoib, emailgoib, passwordgoib, nohandphone
     redirect: 'follow'
   };
 
-  fetch("https://eootkfr0ghzl57e.m.pipedream.net", requestOptions)
+  fetch("http://localhost:3000/lapumk/inspengeluaran", requestOptions)
     .then(response => response.text())
     .then(result => {
       GetResponse(result);
       document.getElementById("formsignup").style.display = 'none';
-      document.getElementById("formsuccess").style.display = 'block';
     })
     .catch(error => console.log('error', error));
 }
 
 function PushButton() {
-  var namagoib = document.getElementById("namagoib").value;
-  var namalastgoib = document.getElementById("namalastgoib").value;
-  var emailgoib = document.getElementById("emailgoib").value;
-  var passwordgoib = document.getElementById("passwordgoib").value;
-  var nohandphone = document.getElementById("nohandphone").value;
-  PostSignUp(namagoib, namalastgoib, emailgoib, passwordgoib,nohandphone);
+  var id = document.getElementById("id").value;
+  var namapengeluaran = document.getElementById("namapengeluaran").value;
+  var jumlah = document.getElementById("jumlah").value;
+  var tanggal = document.getElementById("tanggal").value;
+  var cabang = document.getElementById("cabang").value;
+  PostSignUp(id,namapengeluaran, jumlah, tanggal, cabang);
 }
 
 function GetResponse(result) {
   document.getElementById("formsignup").innerHTML = result;
+  location.reload();
 }

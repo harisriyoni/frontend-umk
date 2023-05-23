@@ -233,32 +233,41 @@
     </nav>
     <!-- End navbar -->
     <h1>Form Penjualan</h1>
-    <form>
-      <div class="form-group row">
-        <label for="namaProduk" class="col-md-2 col-form-label">Nama Produk:</label>
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="namaProduk" placeholder="Masukkan Nama Produk">
+    <div class="container-fluid d-flex align-items-center justify-content-center vh-100">
+      <div class="card shadow-md">
+        <h1 class="card-header text-center">Masukan Data Penjualan</h1>
+        <div class="card-body">
+          <form id="formsignup">
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input class="form-control" type="text" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+              <label for="namaproduk">Nama Produk</label>
+              <input class="form-control" type="text" id="namaproduk" name="namaproduk" required>
+            </div>
+            <div class="form-group">
+              <label for="jumlahpenjualan">Jumlah Penjualan</label>
+              <input class="form-control" type="number" id="jumlahpenjualan" name="jumlahpenjualan" required>
+            </div>
+            <div class="form-group">
+              <label for="tanggaldatamasuk">Tanggal Data Masuk</label>
+              <input class="form-control" type="date" id="tanggaldatamasuk" name="tanggaldatamasuk" required>
+            </div>
+            <div class="form-group">
+              <label for="cabang">Cabang</label>
+              <input class="form-control" type="text" id="cabang" name="cabang" required>
+            </div>
+    
+            <div class="text-center">
+              <button class="btn btn-primary" type="button" onclick="PushButton()">Add Expense</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="form-group row">
-        <label for="jumlahPenjualan" class="col-md-2 col-form-label">Jumlah Penjualan:</label>
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="jumlahPenjualan" placeholder="Masukkan Jumlah Penjualan">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="tanggalDataMasuk" class="col-md-2 col-form-label">Tanggal Data Masuk:</label>
-        <div class="col-md-6">
-          <input type="date" class="form-control" id="tanggalDataMasuk">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-2"></div>
-        <div class="col-md-6">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </form>
+    </div>
+    
+    
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -345,5 +354,5 @@
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
 </body>
-
+<script src="post_tables.js"></script>
 </html>
