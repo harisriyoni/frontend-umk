@@ -1,1 +1,0 @@
-export let URLsuratdb = "http://localhost:3000/lapumk/getpengeluaran"
