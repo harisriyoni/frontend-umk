@@ -29,7 +29,7 @@ var trtaabel = `
   </td>
 </tr>`;
 
-fetch("http://localhost:3000/lapumk/getpenjualan", requestOptions)
+fetch("https://lap-umkm.herokuapp.com/lapumk/getpenjualan", requestOptions)
   .then(response => response.json())
   .then(result => tampilkan(result))
   .catch(error => console.log('error', error));
